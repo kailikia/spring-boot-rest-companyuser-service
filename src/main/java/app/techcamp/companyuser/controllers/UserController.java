@@ -1,10 +1,6 @@
 package app.techcamp.companyuser.controllers;
-
-import java.util.List;
-
 import javax.validation.Valid;
 
-import org.jboss.logging.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

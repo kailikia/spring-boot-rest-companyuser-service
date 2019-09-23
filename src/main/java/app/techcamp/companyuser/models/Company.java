@@ -39,5 +39,68 @@ public class Company extends AuditModel {
 	 @Column(columnDefinition = "text")
 	 private String company_category;
 
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getCompany_name() {
+		return company_name;
+	}
+
+	public void setCompany_name(String company_name) {
+		this.company_name = company_name;
+	}
+
+	public String getCompany_email() {
+		return company_email;
+	}
+
+	public void setCompany_email(String company_email) {
+		this.company_email = company_email;
+	}
+
+	public String getCompany_pin() {
+		return company_pin;
+	}
+
+	public void setCompany_pin(String company_pin) {
+		this.company_pin = company_pin;
+	}
+
+	public String getCompany_registration() {
+		return company_registration;
+	}
+
+	public void setCompany_registration(String company_registration) {
+		this.company_registration = company_registration;
+	}
+
+	public String getCompany_category() {
+		return company_category;
+	}
+
+	public void setCompany_category(String company_category) {
+		this.company_category = company_category;
+	}
+
+	public Company() {
+		
+	}
+
+	public Company(Long id, @NotBlank @Size(min = 3, max = 100) String company_name,
+			@NotBlank @Size(min = 3, max = 100) String company_email, String company_pin, String company_registration,
+			String company_category) {
+		super();
+		this.id = id;
+		this.company_name = company_name;
+		this.company_email = company_email;
+		this.company_pin = company_pin;
+		this.company_registration = company_registration;
+		this.company_category = company_category;
+	}
+	
 }
