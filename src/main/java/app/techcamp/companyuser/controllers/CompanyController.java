@@ -24,7 +24,7 @@ public class CompanyController {
 	        return companyrepo.findAll(pageable);           
 	}
 	
-	@PostMapping("/courses")
+	@PostMapping("/companies")
 	public Company createCompany(@Valid @RequestBody Company company) {
 	     return companyrepo.save(company);
 	}

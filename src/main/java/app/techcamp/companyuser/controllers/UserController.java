@@ -35,16 +35,15 @@ public class UserController {
 		return userrepo.findAll(pageable);
 	}
 	
-	
 	@PostMapping("/companies/{coid}/users")
 	public User createCompany(@PathVariable Long coid, @Valid @RequestBody User user) 
 	{
-		if(!comprepo.existsById(coid)) 
-		{
-			 throw new ResourceNotFoundException("company not found with id " + coid);
-		}
-		return userrepo.save(user);
+		return comprepo.findById(coid)
+                .map(company -> {
+                	user.setCompany(company);
+                    return userrepo.save(user);
+        }).orElseThrow(() -> new ResourceNotFoundException("company not found with id " + coid));
+	
 	}
 	
-
 }
