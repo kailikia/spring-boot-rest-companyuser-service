@@ -24,20 +24,24 @@ public class Company extends AuditModel {
 	
 	 @NotBlank
 	 @Size(min = 3, max = 100)
-	 private String company_name;
+	 private String companyName;
 	 
 	 @NotBlank
 	 @Size(min = 3, max = 100)
-	 private String company_email;
+	 private String companyEmail;
 	 
 	 @Column(columnDefinition = "text")
-	 private String company_pin;
+	 private String companyPin;
 	 
 	 @Column(columnDefinition = "text")
-	 private String company_registration;
+	 private String companyRegistration;
 	 
 	 @Column(columnDefinition = "text")
-	 private String company_category;
+	 private String companyCategory;
+	 
+	public Company() {
+	
+	}
 
 	public Long getId() {
 		return id;
@@ -47,60 +51,44 @@ public class Company extends AuditModel {
 		this.id = id;
 	}
 
-	public String getCompany_name() {
-		return company_name;
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
-	public String getCompany_email() {
-		return company_email;
+	public String getCompanyEmail() {
+		return companyEmail;
 	}
 
-	public void setCompany_email(String company_email) {
-		this.company_email = company_email;
+	public void setCompanyEmail(String companyEmail) {
+		this.companyEmail = companyEmail;
 	}
 
-	public String getCompany_pin() {
-		return company_pin;
+	public String getCompanyPin() {
+		return companyPin;
 	}
 
-	public void setCompany_pin(String company_pin) {
-		this.company_pin = company_pin;
+	public void setCompanyPin(String companyPin) {
+		this.companyPin = companyPin;
 	}
 
-	public String getCompany_registration() {
-		return company_registration;
+	public String getCompanyRegistration() {
+		return companyRegistration;
 	}
 
-	public void setCompany_registration(String company_registration) {
-		this.company_registration = company_registration;
+	public void setCompanyRegistration(String companyRegistration) {
+		this.companyRegistration = companyRegistration;
 	}
 
-	public String getCompany_category() {
-		return company_category;
+	public String getCompanyCategory() {
+		return companyCategory;
 	}
 
-	public void setCompany_category(String company_category) {
-		this.company_category = company_category;
-	}
-
-	public Company() {
-		
-	}
-
-	public Company(Long id, @NotBlank @Size(min = 3, max = 100) String company_name,
-			@NotBlank @Size(min = 3, max = 100) String company_email, String company_pin, String company_registration,
-			String company_category) {
-		super();
-		this.id = id;
-		this.company_name = company_name;
-		this.company_email = company_email;
-		this.company_pin = company_pin;
-		this.company_registration = company_registration;
-		this.company_category = company_category;
+	public void setCompanyCategory(String companyCategory) {
+		this.companyCategory = companyCategory;
 	}
 	
 }

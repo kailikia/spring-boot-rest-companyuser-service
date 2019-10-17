@@ -31,7 +31,7 @@ public class User extends AuditModel{
 	
 	@NotBlank
 	@Size(min = 3, max = 150)
-	private String full_name;
+	private String fullName;
 	
 	@NotBlank
 	@Size(min = 3, max = 100)
@@ -39,7 +39,7 @@ public class User extends AuditModel{
 	
 	@NotBlank
 	@Size(min = 3, max = 20)
-	private String phone_number;
+	private String phoneNumber;
 	
 	@NotBlank
 	@Size(min = 10, max = 150)
@@ -51,12 +51,25 @@ public class User extends AuditModel{
     @JsonIgnore
     private Company company;
 	
-	public Company getCompany() {
-		return company;
+	public User() {
 	}
 
-	public void setCompany(Company company) {
+	public User(Long id, @NotBlank @Size(min = 3, max = 150) String fullName,
+			@NotBlank @Size(min = 3, max = 100) String email, @NotBlank @Size(min = 3, max = 20) String phoneNumber,
+			@NotBlank @Size(min = 10, max = 150) String password, Company company) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.password = password;
 		this.company = company;
+	}
+
+
+
+	public Company getCompany() {
+		return company;
 	}
 
 	public Long getId() {
@@ -67,12 +80,12 @@ public class User extends AuditModel{
 		this.id = id;
 	}
 
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getEmail() {
@@ -83,12 +96,12 @@ public class User extends AuditModel{
 		this.email = email;
 	}
 
-	public String getPhone_number() {
-		return phone_number;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getPassword() {
@@ -99,22 +112,8 @@ public class User extends AuditModel{
 		this.password = password;
 	}
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setCompany(Company company) {
+		this.company = company;
 	}
-
-	public User(Long id, @NotBlank @Size(min = 3, max = 150) String full_name,
-			@NotBlank @Size(min = 3, max = 100) String email, @NotBlank @Size(min = 3, max = 20) String phone_number,
-			@NotBlank @Size(min = 10, max = 150) String password) {
-		super();
-		this.id = id;
-		this.full_name = full_name;
-		this.email = email;
-		this.phone_number = phone_number;
-		this.password = password;
-	}
-	
-	
 
 }
